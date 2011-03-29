@@ -109,8 +109,8 @@ namespace com.echo.PDA
             CopyTable(srcConnection, destConnection, "SELECT * FROM tbl_Compeny", "tbl_Compeny");
             progressBar1.Value = 2 * 20; 
             CopyTable(srcConnection, destConnection, "SELECT * FROM tbl_Gb_New", "tbl_Gb_New");
-            progressBar1.Value = 3 * 20; 
-            CopyTable(srcConnection, destConnection, "SELECT * FROM tbl_gbjm where 类型<>'删除' and 类型<>'退休'", "tbl_gbjm");
+            progressBar1.Value = 3 * 20;
+            CopyTable(srcConnection, destConnection, "SELECT * FROM tbl_gbjm where (备注 like '%企业%' or 备注 like '%县%' or 备注 like '%高%' or 现单位='y' or 备注 like '%省%' or 备注 like '%厅%') and (类型='' or 类型='兼')", "tbl_gbjm");
             progressBar1.Value = 4 * 20; 
             CopyTable(srcConnection, destConnection, "SELECT * FROM tbl_Relate_gbjm", "tbl_Relate_gbjm");
             progressBar1.Value = 5 * 20;
